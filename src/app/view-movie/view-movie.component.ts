@@ -11,10 +11,10 @@ import { MoviesService } from '../movies.service';
   templateUrl: './view-movie.component.html',
   styles: ``
 })
-export class ViewMovieComponent implements OnInit{ 
+export class ViewMovieComponent implements OnInit{
+
   //movieName!: string;
   movieId!: number;
-
   movie:any;
 
 constructor(private route: ActivatedRoute, private moviesService: MoviesService) {
@@ -24,10 +24,31 @@ constructor(private route: ActivatedRoute, private moviesService: MoviesService)
 }
 ngOnInit(): void {
 
-  //this.movie = this.movies.find(obj => obj.title == this.movieName); //Find the 1st matched element
+  // this.movie = this.movies.find(obj => obj.title == this.movieName); //Find the 1st matched element
 
   this.movie = this.moviesService.getMovieById(this.movieId);
 }
+  addToCart(movie: any)  {
+
+    //create array
+    //const cartItems = [];
+    //1.find existing cart items and add item in that list
+    const cartItemStr = localStorage.getItem("CART");
+    const cartItems = cartItemStr != null ? JSON.parse(cartItemStr) : [];
+
+    
+
+    //add items
+    cartItems.push(movie);
+
+    //store in db
+    localStorage.setItem("CART",JSON.stringify(cartItems));
+
+    //redirect to cartpage
+    alert("added items to cart");
+    window.location.href="/cart";
+  }
+
   movies = [
     {title:"Meiyazhagan",
   imgUrl:"https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/meiyazhagan-et00405427-1721627107.jpg",
@@ -80,3 +101,7 @@ language:"Tamil",
    ];
 
 }
+function addToCart(movie: any, any: any) {
+  throw new Error('Function not implemented.');
+}
+

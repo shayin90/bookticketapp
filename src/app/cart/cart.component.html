@@ -1,0 +1,32 @@
+<h3>My Cart</h3>
+
+<!-- {{cartItems | json}} -->
+
+<table class="table table-bordered">
+ <thead>
+<tr>
+<th>Movie Poster</th>
+<th>Movie Title</th>
+<th>Price</th>
+<th>Action</th>
+</tr>
+ </thead>   
+ <tbody>
+    @for(item of cartItems;track item;let i=$index){
+        <tr>
+         
+            <td><img src="{{item.imgUrl}}" width="200px height=200px"/></td>
+            <td>{{item.title}}</td>
+          <td>{{item.price | currency:"INR"}}</td>  
+          
+            <td><button class="btn btn-info">Pay</button>
+                &nbsp;
+                <button class=" btn btn-danger" (click)="removeItem(i)">Delete</button>
+            </td>
+            &nbsp;
+            
+        </tr>
+    }
+ </tbody>
+</table>
+<button class=" btn btn-danger" (click)="clearcart()">EmptyCart</button>
