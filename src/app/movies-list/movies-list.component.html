@@ -1,0 +1,89 @@
+<!-- <p>movie-list works!</p> -->
+ <!-- <p>movies-list works!</p> -->
+ <div class="container-fluid">
+    <h1>Movies</h1>
+    <!-- <div class="row">
+        <div class="col-4">
+            Section 1
+        </div>
+    
+        <div class="col-4">
+            Section 2
+        </div>
+        <div class="col-4">
+            Section 3
+        </div>
+        </div> -->
+    
+    <div class="row">
+      <div class="card col-3">
+        <h2>Filter:</h2>
+       <h2> Language:</h2>
+    
+        <br/>
+        <form (ngSubmit)="applyFilter()">
+    
+          <div>
+    <label for ="language">Language:</label>&nbsp;
+        <select name="language" [(ngModel)]="language"><br/>
+          <option>Tamil</option>
+          <option>Hindi</option>
+          <option>English</option>    
+          <option>Malayalam</option>
+          <option>Telugu</option>
+        </select>
+      </div>
+    
+      <br/>
+      <div>
+        <label for ="movieType">MovieType:</label>&nbsp;
+            <select name="movieType" [(ngModel)]="movieType">
+              <option>Drama</option>
+              <option>Comedy</option>
+              <option>Sports</option>    
+              <option>Horror</option>
+              <option>Mystery</option>
+            </select>
+          </div>
+          &nbsp;
+    
+          <div>
+            <label for="price">Price Range:</label>&nbsp;
+            <input type="number" name="minPrice" id="minPrice" [(ngModel)]="minPrice" placeholder="Enter minPrice"><br/>
+    
+          <br/>
+            <input type="number" name="maxPrice" id="maxPrice" [(ngModel)]="maxPrice" placeholder="Enter maxPrice"><br/>
+            &nbsp;&nbsp;&nbsp;
+    
+    
+          </div>
+    
+        <button type="submit" class="btn btn-info">Submit</button>&nbsp;
+        <button type="reset" class="btn btn-danger" (click)= "reset()">Reset</button>
+      </form>
+      </div>
+    
+      <div class="card col-9">
+        <div class="row">
+        @for(movie of movies; track movie){   
+    <div class="card col-3" style="width: 18rem;">
+        <img src="{{movie.imgUrl }}" >
+        <div class="card-body">
+          <h5 span class="card-title">{{movie.title}}</h5>
+          <p class="card-text">{{ movie.description}} &nbsp;</p>
+          <span class="badge text-bg-primary">{{movie.language}}</span>&nbsp;
+          <span class="badge text-bg-success">{{movie.price | currency:'INR'}}</span>
+           &nbsp;
+           <!-- <span class="badge text-bg-secondary">{{movie.title}}</span>&nbsp; -->
+           &nbsp;
+           <br/><br/>
+            
+             <a routerLink="{{movie.id}}" class="btn btn-warning" >View</a>
+        </div>
+    </div>
+    
+     }
+    </div> 
+    </div>                                                                                                              
+    </div>
+
