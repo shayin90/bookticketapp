@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { MoviesService } from '../movies.service';
 
 @Component({
   selector: 'app-view-movie',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,FormsModule,RouterLink],
   templateUrl: './view-movie.component.html',
   styles: ``
 })
@@ -29,25 +29,29 @@ ngOnInit(): void {
   this.movie = this.moviesService.getMovieById(this.movieId);
 }
   addToCart(movie: any)  {
-
+  const cartItems = [];
+  const ticket = {
+    "id":movie.id,
+    "title":movie.title,
+    "price":movie.price,
+    "imgUrl":movie.imgUrl,
+      numberoftickets:1
+  }
+  //cartItems .push(movie);
+  cartItems.push(ticket);
+  localStorage.setItem("CART", JSON .stringify(cartItems));
+   //redirect to cartpage
+  alert("added items to Cart");
+  window.location.href = "/cart";
+}
     //create array
     //const cartItems = [];
     //1.find existing cart items and add item in that list
-    const cartItemStr = localStorage.getItem("CART");
-    const cartItems = cartItemStr != null ? JSON.parse(cartItemStr) : [];
+    // const cartItemStr = localStorage.getItem("CART");
+    // const cartItems = cartItemStr != null ? JSON.parse(cartItemStr) : [];
 
     
-
-    //add items
-    cartItems.push(movie);
-
-    //store in db
-    localStorage.setItem("CART",JSON.stringify(cartItems));
-
-    //redirect to cartpage
-    alert("added items to cart");
-    window.location.href="/cart";
-  }
+  
 
   movies = [
     {title:"Meiyazhagan",
@@ -98,7 +102,14 @@ language:"Tamil",
   description: "Horror/comedy/Drama",
   language:"English",
   },
-   ];
+
+   {
+  title:"Petta Rap",
+ imgUrl:"https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/petta-rap-et00410110-1725264117.jpg",
+  description: "Drama/Musical",
+  language:"Tamil",
+  },
+];
 
 }
 function addToCart(movie: any, any: any) {

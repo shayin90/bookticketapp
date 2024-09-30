@@ -73,6 +73,15 @@ export class MoviesService {
    language:"English",
    price:100
     },
+    {
+    id:9,
+     title:"Petta Rap",
+    imgUrl:"https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/petta-rap-et00410110-1725264117.jpg",
+   description: "Drama/Musical",
+   language:"Tamil",
+   price:150
+    },
+    
    ];
    getAllMovies() {
     return this.movies;

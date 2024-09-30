@@ -8,6 +8,8 @@
 <th>Movie Poster</th>
 <th>Movie Title</th>
 <th>Price</th>
+<th>Number of Tickets</th>
+<th>Show Date</th>
 <th>Action</th>
 </tr>
  </thead>   
@@ -17,10 +19,11 @@
          
             <td><img src="{{item.imgUrl}}" width="200px height=200px"/></td>
             <td>{{item.title}}</td>
-          <td>{{item.price | currency:"INR"}}</td>  
-          
-            <td><button class="btn btn-info">Pay</button>
-                &nbsp;
+           <td>{{item.price | currency:"INR"}}</td>  
+           <td><input type="number" value ="{{item.numberoftickets}}"></td>
+           <td><input type="date" name="" id=""></td>
+           <td><a href="/payment" class="btn btn-info">Pay</a>
+            &nbsp;  
                 <button class=" btn btn-danger" (click)="removeItem(i)">Delete</button>
             </td>
             &nbsp;

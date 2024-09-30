@@ -5,6 +5,9 @@ import { MoviesListComponent } from './movies-list/movies-list.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { CartComponent } from './cart/cart.component';
+import { PaymentComponent } from './payment/payment.component';
+import { CashpaymentComponent } from './cashpayment/cashpayment.component';
+import { CardpaymentComponent } from './cardpayment/cardpayment.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -13,5 +16,7 @@ export const routes: Routes = [
     { path: 'login', component: LoginComponent},
     { path: 'register', component:RegisterComponent },
      { path: 'cart', component: CartComponent},
-    { path: '', redirectTo: '/home', pathMatch: 'full' }
+     {path:'cash',component:CashpaymentComponent},
+     {path:'card', component:CardpaymentComponent},
+     { path: '', redirectTo: '/home', pathMatch: 'full' }
   ];
