@@ -14,22 +14,28 @@
 </tr>
  </thead>   
  <tbody>
-    @for(item of cartItems;track item;let i=$index){
-        <tr>
-         
-            <td><img src="{{item.imgUrl}}" width="200px height=200px"/></td>
-            <td>{{item.title}}</td>
-           <td>{{item.price | currency:"INR"}}</td>  
-           <td><input type="number" value ="{{item.numberoftickets}}"></td>
-           <td><input type="date" name="" id=""></td>
-           <td><a href="/payment" class="btn btn-info">Pay</a>
-            &nbsp;  
-                <button class=" btn btn-danger" (click)="removeItem(i)">Delete</button>
-            </td>
-            &nbsp;
-            
-        </tr>
+
+    @if (cartItems) {
+       
+   
+        @for(item of cartItems;track item; let i = $index){
+            <tr>
+             
+                <td><img src="{{item.imgUrl}}" width="200px height=200px"/></td>
+                <td>{{item.title}}</td>
+              <td>{{item.price | currency:"INR"}}</td>  
+              <td><input type="number" value="{{item.numberoftickets}}"></td>
+              <td><input type="date" name="" id=""></td>
+                <td><a routerLink="/payment" class="btn btn-info">Pay</a>
+                 &nbsp;
+                 <button class=" btn btn-danger" (click)="removeItem(i)">Delete</button>
+                </td>
+                &nbsp;
+                
+            </tr>
+        
     }
- </tbody>
-</table>
-<button class=" btn btn-danger" (click)="clearcart()">EmptyCart</button>
+}
+     </tbody>
+    </table>
+    <button class=" btn btn-danger" (click)="clearcart()">EmptyCart</button>

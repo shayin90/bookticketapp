@@ -1,12 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports:[CommonModule,RouterLink,FormsModule],
+  imports:[CommonModule,RouterLink],
   templateUrl: './cart.component.html',
   styles: ``
 })
@@ -33,5 +32,7 @@ clearcart() {
 localStorage.removeItem("CART");
 this.cartItems = []; //reset to empty
 }
+
+
 }
 

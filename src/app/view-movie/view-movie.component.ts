@@ -112,7 +112,4 @@ language:"Tamil",
 ];
 
 }
-function addToCart(movie: any, any: any) {
-  throw new Error('Function not implemented.');
-}
 
