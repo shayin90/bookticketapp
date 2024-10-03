@@ -24,9 +24,9 @@
         <span class="badge text-bg-warning">{{ movie.description}}</span> &nbsp; <br/>
         <span class="badge text-bg-primary">{{movie.language}}</span> &nbsp;
         <span class="badge text-bg-success">{{movie.price | currency:'INR'}}</span> &nbsp;&nbsp; 
-        &nbsp;<br/>
+        &nbsp;<br/><br/>
         <a routerLink= "{{movie.title}}" class="btn btn-info">Book Ticket</a>
-       &nbsp; <br/>
+       &nbsp; <br/><br/>
         
    <a class="btn btn-danger"(click)="addToCart(movie)">Add To Cart</a> 
      <!-- <a routerLink="/cart" class="btn btn-primary" >Add To Cart</a> -->

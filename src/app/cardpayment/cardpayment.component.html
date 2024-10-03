@@ -1,42 +1,173 @@
-<h3>Mode of Payments</h3>
+<!-- <h3>Mode of Payments</h3>
 <form (ngSubmit)="onSubmit()">
-
-<div class="card w-50">
-    <div class="card-body">
-    <h5 class="card-title"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-    class="bi bi-credit-card" viewBox="0 0 16 16">
-   <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 
-   1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
-   <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
-  </svg> Credit / Debit / ATM Card </h5>
-    <p class="card-text">Note : With supporting text below as a natural lead-in to additional content.</p>
-
-
-
-    <div class="card w-51">
-    <div class="card-body">
-    <h5 class="card-title"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-    fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
-    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2
-     2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
-    <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
-     </svg> Card Number</h5>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="cardnumber" id="cardnumber"
-     class="col-6" placeholder="xxxx xxxx xxxx xxxx" [(ngModel)]="cardnumber">&nbsp;<br>
-    <br>
-    <label for="validthru">Valid Thru</label><br>
-    <input type="number" name="validthru" id="validthru" placeholder="MM / YY "
-     [(ngModel)]="expirydate"><br><br>
-
-
-     <label for="cvvnum">CVV</label><br>
-     <input type="number" name="cvvnum" id="cvvnum" placeholder="CVV " [(ngModel)]="cvvnum">
-     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    &nbsp;<button type="submit" class="btn btn-success">Confirm Payment</button>
-     &nbsp;<button type="reset" class="btn btn-danger">Reset</button>
-
-    </div>
-    </div>
-    </div>
-    </div>
+  <div class="container-card">
+ <div class="row">
+ <div class="col-xs-12 col-md-4">
+ <div class="panel panel-default">
+ <div class="panel-heading">
+  <h3 class="panel-title">Payment Details</h3>
+ <div class="checkbox pull-right">
+ <label>
+ <input type="checkbox" />Remember</label>
+</div>
+</div>
+<div class="panel-body">
+<form role="form">
+ <div class="form-group">
+<label for="cardNumber">CARD NUMBER</label>
+<div class="input-group">
+ <input type="text" class="form-control" id="cardNumber" placeholder="Valid Card Number"required autofocus />
+<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+</div>
+</div>
+<div class="row">
+  <div class="col-xs-7 col-md-7">
+ <div class="form-group">
+ <label for="expityMonth">EXPIRY DATE</label>
+ <div class="col-xs-6 col-lg-6 pl-ziro">
+<input type="text" class="form-control" id="expityMonth" placeholder="MM" required />
+</div>
+ <div class="col-xs-6 col-lg-6 pl-ziro">
+<input type="text" class="form-control" id="expityYear" placeholder="YY" required /></div>
+</div>
+</div>
+<div class="col-xs-5 col-md-5 pull-right">
+<div class="form-group">
+ <label for="cvCode">CV CODE</label>
+  <input type="password" class="form-control" id="cvCode" placeholder="CV" required />
+</div>
+</div>
+ </div>
 </form>
+</div>
+</div>
+ <ul class="nav nav-pills nav-stacked">
+<li class="active"><a href="#"><span class="badge pull-right"><span class="glyphicon glyphicon-usd"></span>4200</span> Final Payment</a>
+</li>
+ </ul>
+<br/>
+ <a href="/cardpayment" class="btn btn-success " role="button">Pay</a>
+ 
+ </div>
+ </div>
+</div>
+</form> -->
+
+<h3 span class="text-align: center">Mode of Payment </h3>
+<div class="container py-5">
+  
+  <div class="row">
+    <div class="col-lg-7 mx-auto">
+      <div class="bg-white rounded-lg shadow-sm p-5">
+        <!-- Credit card form tabs -->
+        <ul role="tablist" class="nav bg-light nav-pills rounded-pill nav-fill mb-3">
+          <li class="nav-item">
+            <a data-toggle="pill" href="#nav-tab-card" class="nav-link active rounded-pill">
+                                <i class="fa fa-credit-card"></i>
+                                Credit Card
+                            </a>
+          </li>
+          <li class="nav-item">
+            <a data-toggle="pill" href="#nav-tab-paypal" class="nav-link rounded-pill">
+                                <i class="fa fa-paypal"></i>
+                                Paypal
+                            </a>
+          </li>
+          <li class="nav-item">
+            <a data-toggle="pill" href="#nav-tab-bank" class="nav-link rounded-pill">
+                                <i class="fa fa-university"></i>
+                                 Bank Transfer
+                             </a>
+          </li>
+        </ul>
+        <!-- End -->
+
+
+        <!-- Credit card form content -->
+        <div class="tab-content">
+
+          <!-- credit card info-->
+          <div id="nav-tab-card" class="tab-pane fade show active">
+            <p class="alert alert-success">Some text success or error</p>
+            <form role="form">
+              <div class="form-group">
+                <label for="username">Full name (on the card)</label>
+                <input type="text" name="username" placeholder="SHAYIN B" required class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="cardNumber">Card number</label>
+                <div class="input-group">
+                  <input type="text" name="cardNumber" placeholder="Your card number" class="form-control" required>
+                  <div class="input-group-append">
+                    <span class="input-group-text text-muted">
+                                                <i class="fa fa-cc-visa mx-1"></i>
+                                                <i class="fa fa-cc-amex mx-1"></i>
+                                                <i class="fa fa-cc-mastercard mx-1"></i>
+                                            </span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-8">
+                  <div class="form-group">
+                    <label><span class="hidden-xs">Expiration</span></label>
+                    <div class="input-group">
+                      <input type="number" placeholder="MM" name="" class="form-control" required>
+                      <input type="number" placeholder="YY" name="" class="form-control" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="form-group mb-4">
+                    <label title="Three-digits code on the back of your card">CVV
+                                                <i class="fa fa-question-circle"></i>
+                                            </label>
+                    <input type="text" required class="form-control">
+                  </div>
+                </div>
+
+
+
+              </div>
+              <button type="button" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm"> Confirm  </button>
+            </form>
+          </div>
+          <!-- End -->
+
+          <!-- Paypal info -->
+          <div id="nav-tab-paypal" class="tab-pane fade">
+            <p>Paypal is easiest way to pay online</p>
+            <p>
+              <button type="button" class="btn btn-primary rounded-pill"><i class="fa fa-paypal mr-2"></i> Log into my Paypal</button>
+            </p>
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+          <!-- End -->
+
+          <!-- bank transfer info -->
+          <div id="nav-tab-bank" class="tab-pane fade">
+            <h6>Bank account details</h6>
+            <dl>
+              <dt>Bank</dt>
+              <dd> THE WORLD BANK</dd>
+            </dl>
+            <dl>
+              <dt>Account number</dt>
+              <dd>7775877975</dd>
+            </dl>
+            <dl>
+              <dt>IBAN</dt>
+              <dd>CZ7775877975656</dd>
+            </dl>
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+          <!-- End -->
+        </div>
+        <!-- End -->
+
+      </div>
+    </div>
+  </div>
+</div>

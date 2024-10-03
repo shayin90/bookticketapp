@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <h3>Register Using Reactive Forms</h3>
+    <form (ngSubmit)="onSubmit()" [formGroup]="regForm">
+    
+        <div>
+            <label for="name" >Name:</label>&nbsp;
+            <input type="text" name="name" id="name" formControlName="name"   placeholder="Enter Name"   required autofocus >
+            </div>
+        &nbsp;
+        <div>
+        <label for="email" >Email:</label>&nbsp;
+        <input type="email" name="email" id="email" placeholder="Enter email" formControlName="email" required  >
+        </div>
+    <br/>
+        <div>
+        <label for="password">Password:</label>&nbsp;
+        <input type="password" name="password" id="password" placeholder="enter password" formControlName="password" required >
+        </div>
+        &nbsp;
+        <div>
+            <button type="submit" [disabled]="regForm.invalid" class="btn btn-success">Submit</button>
+
+            {{regForm.invalid}},-{{regForm.valid}}
+        </div>
+        
+        </form>
+    

@@ -9,4 +9,14 @@ import { Component } from '@angular/core';
 })
 export class CashpaymentComponent {
 
+  cash!: string;
+
+  constructor() {
+    console.log('CashPaymentComponent');
+  }
+
+  onSubmit() {
+    console.log('Cash Received');
+   alert("Paymrnt Received and Ticket Confirmed");
+}
 }

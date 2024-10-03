@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+/* 
+.container-card{
+margin: 5rem;
+padding: 5rem;
+box-sizing: border-box;
+border: 1px solid black;
+width: 700px;
+height: 550px; */
+body {
+ margin-top:10px; 
+ box-sizing: border-box;
+ border: 1px solid gray;
+}
+
+.panel-title {
+display: inline;
+font-weight: bold;
+
+}
+.checkbox.pull-right  
+{
+margin: 0; 
+}
+.pl-ziro 
+{ padding-left: 0px; }

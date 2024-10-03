@@ -1,29 +1,44 @@
+
+<br/>
 <h3>Mode of Payments</h3>
  <form (ngSubmit)="onSubmit()">
-
+<!-- 
  <select class="$input-focus-width;">
         <option selected>Type Of Payments</option>
         <option value="cash">Cash Payment</option>
         <option value="card">Card Payment</option>
         <option value="gpay">Gpay</option>
-      </select> 
-    
-        <!-- <div >
-        <input type="checkbox" id="cp" name="cash" value="CashPayment">
-        <label for="cp">Cash Payment </label><br>
+      </select>  -->
+      <!-- <select class="$input-focus-width;"> -->
+       <br/>
+       <div >
+        <img src="assets/images/cash.png">
+        <label for="cp">Cash Payment </label>&nbsp;
+        <input type="checkbox" name="cash" id="cashpayment" placeholder="Enter CashPayment" [(ngModel)]="cashpayment" required autofocus  >
+       
         </div>
+       
+
         <br/>
 
-        <div><input type="checkbox" id="card" name="card" value="Card Payment">
-        <label for="card">Card Payment</label><br>
-        </div>
-        <button type="submit" class="btn btn-success">Confirm Payment</button>
+        <div>
+          <img src="assets/images/crd.png" width="120px">&nbsp;&nbsp;&nbsp;
+          <label for="cardpayment" >CardPayment:</label>&nbsp;
+          <input type="checkbox" name="card" id="cardpayment" placeholder="Enter CardPayment"  [(ngModel)]="cardpayment" required  >
+          </div>
+          <br/>
+
+        
+        <button type="submit" class="btn btn-success">confirmpayment</button>
          &nbsp;<button type="reset" class="btn btn-danger">Reset</button>
+
+
+
         
         
-        </form> 
-       -->
-<br><br>    
+       <!-- </select> -->
+       
+<!-- <br><br>    
 
     <div class="card w-50">
         <div class="card-body">
@@ -62,7 +77,6 @@
         </div>
         </div>
         </div>
-        </div>  
+        </div>   -->
  </form>
 
- {{card}}

@@ -8,6 +8,7 @@ import { CartComponent } from './cart/cart.component';
 import { CashpaymentComponent } from './cashpayment/cashpayment.component';
 import { CardpaymentComponent } from './cardpayment/cardpayment.component';
 import { PaymentComponent } from './payment/payment.component';
+import { Register1Component } from './register1/register1.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -15,6 +16,7 @@ export const routes: Routes = [
     { path: 'movies/:id', component: ViewMovieComponent},
     { path: 'login', component: LoginComponent},
     { path: 'register', component:RegisterComponent },
+    {path:'register1',component:Register1Component},
      { path: 'cart', component: CartComponent},
      {path:'payment',component:PaymentComponent},
      {path:'cash',component:CashpaymentComponent},
