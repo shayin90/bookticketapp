@@ -13,7 +13,7 @@
       </div> -->
    
         <br/>
-        <sk-page class="row">
+        <div class="row">
           <div class="card col-3">
              Filter
         <br/>
@@ -76,15 +76,16 @@
                 <span class="visually-hidden">Loading...</span>
               </div>
           </div>
-
+<div class="row">
           @for(m of movies;track m){
-            <app-movie-card [movie]="m">
+            <app-movie-card [movie]="m" class="col-3">
     
             </app-movie-card>
           }
         </div>
         </div>
         </div>
+        </div>
 
-      </sk-page>
+      </div>
 
