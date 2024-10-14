@@ -9,6 +9,9 @@ import { CashpaymentComponent } from './cashpayment/cashpayment.component';
 import { CardpaymentComponent } from './cardpayment/cardpayment.component';
 import { PaymentComponent } from './payment/payment.component';
 import { Register1Component } from './register1/register1.component';
+import { ProfileEditComponent } from './profile-edit/profile-edit.component';
+import { BadgeComponent } from './components/badge/badge.component';
+import { PageComponent } from './components/page/page.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -21,5 +24,8 @@ export const routes: Routes = [
      {path:'payment',component:PaymentComponent},
      {path:'cash',component:CashpaymentComponent},
      {path:'card', component:CardpaymentComponent},
+     {path:'profile',component:ProfileEditComponent},
+     {path:'badge',component:BadgeComponent},
+     {path:'page', component:PageComponent},
      { path: '', redirectTo: '/home', pathMatch: 'full' }
   ];

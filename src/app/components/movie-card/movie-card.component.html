@@ -1,0 +1,19 @@
+
+         <!-- @for(movie of movies; track movie){    -->
+    <div class="card col-3" class="card-img-top"  style="width: 18rem;">
+        <img src="{{movie.imgUrl }}" >
+        <div class="card-body">
+          <h5 span class="card-title">{{movie.title}}</h5>
+          <p class="card-text">{{ movie.description}} &nbsp;</p> 
+
+        
+              {{movie.language}} 
+           
+         <!-- <span class="badge text-bg-primary">{{movie.language}}</span>&nbsp; -->
+          <span class="badge text-bg-success">{{movie.price | currency:'INR'}}</span>
+           &nbsp;&nbsp;
+           <br/><br/>
+            
+             <a routerLink="{{movie.id}}" class="btn btn-warning" >View</a> 
+             </div>
+    </div>

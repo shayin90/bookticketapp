@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -14,13 +15,16 @@ export class LoginComponent {
 email!: string;
 password!:string;
 
-  constructor() {
+  constructor(private readonly toastr: ToastrService) {
     console.log('LoginComponent');
   }
 
   onSubmit() {
+    
     console.log('Form Submitted');
+
     console.log('Email:' ,this.email, 'Password:' +this.password);
+     
 
     //if admingmail.com,pass123 ,valid login
 
@@ -42,7 +46,8 @@ password!:string;
     
     if (userExits !=null) {
     // if(this.email == "admin@gmail.com" && this.password == "pass123"){
-      alert("Successfully LoggedIn");
+      // alert("Successfully LoggedIn");
+      this.toastr.warning("Successfully Loggedin"); 
       localStorage.setItem("Logged_IN-USER","true");
       localStorage.setItem("EMAIL" ,this.email);
 
@@ -51,7 +56,8 @@ password!:string;
       window.location.href = "/movies";
     }
     else{
-      alert("Invalid Login Credientials");
+      // alert("Invalid Login Credientials");
+      this.toastr.info("Successfully Loggedin"); 
     }
   }
 }

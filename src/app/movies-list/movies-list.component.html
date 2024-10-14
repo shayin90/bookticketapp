@@ -1,25 +1,21 @@
-<!-- <p>movie-list works!</p> -->
- <!-- <p>movies-list works!</p> -->
- <div class="container-fluid">
-    <h1>Movies</h1>
-    <!-- <div class="row">
-        <div class="col-4">
-            Section 1
-        </div>
+
+   <sk-page title="Movies">
     
-        <div class="col-4">
-            Section 2
-        </div>
-        <div class="col-4">
-            Section 3
-        </div>
-        </div> -->
+      <!-- <div class="col-3">
+        Section 1
+    </div>
     
-    <div class="row">
-      <div class="card col-3">
-        <h2>Filter:</h2>
-       <h2> Language:</h2>
-    
+      <div class="col-4">
+          Section 2
+      </div>
+      <div class="col-4">
+          Section 3
+      </div> -->
+   
+        <br/>
+        <sk-page class="row">
+          <div class="card col-3">
+             Filter
         <br/>
         <form (ngSubmit)="applyFilter()">
     
@@ -65,25 +61,30 @@
     
       <div class="card col-9">
         <div class="row">
-        @for(movie of movies; track movie){   
-    <div class="card col-3" style="width: 18rem;">
-        <img src="{{movie.imgUrl }}" >
-        <div class="card-body">
-          <h5 span class="card-title">{{movie.title}}</h5>
-          <p class="card-text">{{ movie.description}} &nbsp;</p>
-          <span class="badge text-bg-primary">{{movie.language}}</span>&nbsp;
-          <span class="badge text-bg-success">{{movie.price | currency:'INR'}}</span>
-           &nbsp;
-           <!-- <span class="badge text-bg-secondary">{{movie.title}}</span>&nbsp; -->
-           &nbsp;
-           <br/><br/>
-            
-             <a routerLink="{{movie.id}}" class="btn btn-warning" >View</a>
-        </div>
-    </div>
+
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a routerLink="/">
+                <i class="bi bi house-door-fill"></i>Home</a></li>
+                <li class="breadcrumb-item"><a routerLink="/movies"><i class="bi bi-credit-card"></i>Movies</a></li>
+            </ol>
+          </nav>
+
+          <div title ="Movies">
+            <div *ngIf="Loading">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+          </div>
+
+          @for(m of movies;track m){
+            <app-movie-card [movie]="m">
     
-     }
-    </div> 
-    </div>                                                                                                              
-    </div>
+            </app-movie-card>
+          }
+        </div>
+        </div>
+        </div>
+
+      </sk-page>
 

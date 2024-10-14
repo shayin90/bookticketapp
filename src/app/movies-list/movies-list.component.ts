@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
 import { MoviesService } from '../movies.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MovieCardComponent } from '../components/movie-card/movie-card.component';
+import { PageComponent } from '../components/page/page.component';
 
 @Component({
   selector: 'app-movies-list',
   standalone: true,
-  imports: [RouterLink,CommonModule,FormsModule],
+  imports: [RouterLink,CommonModule,FormsModule,MovieCardComponent,PageComponent],
   templateUrl: './movies-list.component.html',
   styles: ``
 })
@@ -26,6 +27,7 @@ export class MoviesListComponent  implements OnInit {
  minPrice!: number;
 
  maxPrice!: number;
+Loading: any;
 
 
 //  const obj= new ClassName();

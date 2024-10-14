@@ -1,0 +1,56 @@
+<div class="container-fluid">
+    <h3>Edit User Form</h3>
+  
+    Values: {{editUserForm.value | json }}<br />
+    Valid: {{editUserForm.valid}},
+    InValid : {{editUserForm.invalid}}
+  
+  
+    <form (ngSubmit)="onSubmit()" [formGroup]="editUserForm" class="needs-validation was-validated" novalidate>
+  
+      <div>
+        <label for="name" class="form-label" class="form-label">Name</label>
+        <input type="text" name="name" id="name" formControlName="name" placeholder="Enter name" required autofocus>
+  
+        <!-- <small *ngIf="( this.editUserForm.controls['name'].dirty || this.editUserForm.controls['name'].touched ) && this.editUserForm.controls['name'].errors?.['required']" class="invalid-feedback"> -->
+        <small *ngIf="( name.dirty || name.touched ) && name.errors?.['required']" class="invalid-feedback">
+          Name is required
+        </small>
+      </div>
+  
+      <div>
+        <label for="email" class="form-label">Email</label>
+        <input type="email" name="email" id="email" placeholder="Enter email" formControlName="email" required>
+        <div *ngIf="(email.dirty || email.touched ) && email.errors">
+          <small *ngIf="email.errors?.['required']" class="invalid-feedback">
+            Email is required
+          </small>
+          <small *ngIf="email.errors?.['email']" class="invalid-feedback">
+            Email is not valid format
+          </small>
+        </div>
+      </div>
+  
+      <div>
+        <label for="password" class="form-label">Password</label>
+        <input type="text" name="password" id="password" placeholder="Enter password" formControlName="password" required>
+  
+        <div *ngIf="password.dirty && password.errors" class="invalid-feedback">
+          <small *ngIf="password.errors?.['required']">
+            Password is required
+          </small>
+          <small *ngIf="password.errors?.['minlength']">
+            Password must have minimum 8 characters
+          </small>
+          <small *ngIf="password.errors?.['maxlength']">
+            Password should not exceed 12 characters
+          </small>
+        </div>
+      </div>
+  
+  
+      <div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </form>
+  </div>
