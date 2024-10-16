@@ -28,17 +28,16 @@
         <div class="card-body">
         <h4 span class="card-title">{{movie.title}}</h4>
         <span class="badge text-bg-warning">{{ movie.description}}</span> &nbsp; <br/>
-        <span class="badge text-bg-primary">{{movie.language}}</span> &nbsp;
+        <span class="badge text-bg-success">{{movie.language}}</span> &nbsp;
 
-        <span class="badge text-bg-success" style="border-radius:10px;">{{movie.language}}</span>
+        <!-- <span class="badge text-bg-success" style="border-radius:10px;">{{movie.language}}</span> -->
     &nbsp;
-    <app-badge color="blue">{{movie.language}}</app-badge>
+    <!-- <app-badge color="blue"> 
+        {{movie.language}}</app-badge>-->
 
-    <app-badge color="green">
-        {{movie.price | currency:'INR'}}
-    </app-badge>
+    <app-badge color="green">{{movie.price | currency:'INR'}}</app-badge>
 
-        <span class="badge text-bg-success">{{movie.price | currency:'INR'}}</span> &nbsp;&nbsp; 
+        <!-- <span class="badge text-bg-success">{{movie.price | currency:'INR'}}</span> &nbsp;&nbsp;  -->
         &nbsp;<br/><br/>
         <a routerLink= "{{movie.title}}" class="btn btn-info">Book Ticket</a>
        &nbsp; <br/><br/>

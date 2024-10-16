@@ -52,12 +52,13 @@ password!:string;
       localStorage.setItem("EMAIL" ,this.email);
 
 
-      //redirect
-      window.location.href = "/movies";
     }
     else{
       // alert("Invalid Login Credientials");
       this.toastr.info("Successfully Loggedin"); 
+      
+      //redirect
+      window.location.href = "/movies";
     }
   }
 }

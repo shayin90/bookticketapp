@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Noto Sans Palmyrene
+- Font Author: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/palmyrene)
+- Font Source: https://fonts.gstatic.com/s/notosanspalmyrene/v16/ZgNPjOdKPa7CHqq0h37c_ASCWvH93SFCPnK5ZpdNtcA.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))

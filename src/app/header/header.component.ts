@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
 
 constructor() {
 
-  console.log('HeaderComponent'); 
+  console.log("HeaderComponent called"); 
 }
 ngOnInit(): void {
  //fetch items localstorage whether user is loggein
