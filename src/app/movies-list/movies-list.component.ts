@@ -11,7 +11,10 @@ import { PageComponent } from '../components/page/page.component';
   standalone: true,
   imports: [RouterLink,CommonModule,FormsModule,MovieCardComponent,PageComponent],
   templateUrl: './movies-list.component.html',
-  styles: ``
+  styles: `
+  h2{
+    color:green;
+  }`
 })
 export class MoviesListComponent  implements OnInit {
 
